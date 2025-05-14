@@ -1,4 +1,3 @@
----
 Infrastructure Management:
 =========================
 
@@ -42,7 +41,7 @@ terraform refresh
 The terraform refresh command is used to reconcile the state Terraform knows about (via its state file) with the real-world infrastructure. This does not modify infrastructure but does modify the state file.
 
 terraform destroy
-================
+=================
 destroy the infrastructure what statefile have.
 
 terraform taint

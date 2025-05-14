@@ -1,0 +1,60 @@
+
+                                                Terraform-commands
+=========================================================================================================================================
+1) Terraform init              --------To initializing provide the pulgins and to required the dependency lock files.
+
+2) Terraform init --upgrade    --------Upgrade the version of the provide the pulgins.
+
+3) terraform get               --------Download and update the dependencies.
+
+4) Terraform plan              --------Execution of the providers to terraform configuration
+
+5) Terraform apply             --------Used to apply changes and create the infrastructure.
+
+6) Terraform apply -auto-approve ----used to apply changes and create the infrastructure without approval.
+
+7) Terraform apply -replace=<resource_name> ----Used to the replace as a specific resource to change to the in your infrastructure
+
+8) Terraform workspace new  -----To create the new workspace in your terraform configuration.
+
+9) Terraform workspace list  ---- To display of the list of the workspace in your terraform configuration.
+
+10) Terraform workspace select <workspace_name> ---- To switch to the different workspace in your terraform configuration.
+
+11) Terraform workspace delete <workspace_name> ---- To delete of specific workspace name.
+
+12) Terraform workspace show                   ---- To display for the name of the current workspace name.
+
+13) Terraform import resource_name.attribute ------To import the existing resources into a terraform state file.
+
+14) Terraform show                         -------- To display the current state of your infrastructure as representend by the terraform state file.
+
+15) Terraform destoy                     --------TO destoy the total infrastructure that was create by terraform.
+
+16) Terraform apply destroy --auto-approve ---- all the infrastructure to destroy the resources without approval.
+
+17) Terraform providers --- To used to the list of the providers that are currently installed on your system.
+
+18) Terraform version  ---- To display for the current version of terraform.
+
+19) Terraform output ---- To display the values of output variable define in your terraform configuration.
+
+20) Terraform state pull ---- To download to the current state data.
+
+21) Terraform state list ----To list of the all resources that the managed by the terraform.
+
+22) Terraform validate  ----- TO validate the syntax and configuration of terraform files.
+
+23) Terraform fmt       ------ To terraform configuration files in canonical format and alinment format.
+
+24) Terraform refresh  ----- only modified the file will be updated in your terraform configuration.
+
+25) Terraform mv -----To used move or rename files or directories in a terraform configurations.
+
+26) Terraform state push  ---- used to upload the local state file to a remote state.
+
+27) Terraform providers lock ---To lock the providers dependencies for a terraform configuration.
+
+28) terraform taint ----
+
+29) Terraform untaint ---

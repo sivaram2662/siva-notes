@@ -1,0 +1,125 @@
+                                linux commands
+==========================================================================================================
+2) How do you print a particular column in linux? What command do you use?
+             Answer: awk '{print $1}'
+
+3) How do you check disk usage in linux?
+             Answer:df -h 
+4) just open your linux terminal . create one file in that file and replace the word by
+another word using sed command.
+            Answer:sed -i 
+5) I want to know specific directory storage.
+            Answer:du -s
+6) The top 5 processes cpu memory i want to know which command is used?
+            Answer: top
+7) in a directory we have a file. How can we delete one month old versions files?
+            Answer:find -mtime 30- 
+8) Timestamp Protocol in Linux
+            Answer:stat
+9) Linux command for Password storage
+            Answer:/etc/shodow
+10) Linux command for unmask
+
+11) Linux to change the other user permission
+
+12) disk utilization linux command?
+           Answer: df -h
+13) memory utilization linux command?
+           Answer:Free -m 
+14) What is the threat dump, heap dump ?
+
+Answer: thread dump : A thread dump is a snapshot of the state of all threads that are part of the process.
+Answer: heap dump : A heap dump is a snapshot of the state of all objects in the jvm(java virtual machine) heap  at a certain point in time.
+
+15) Difference between grep and egrep?
+ Answer: specific serching of the word is grep. in all the files display for the command is egrep.
+         
+16) How to check what process is running?
+
+Answer: ps -ef | grep 
+
+17) Difference between ping and telnet?
+Answer:server connectivity check purpose using in this two commands. in server ping automatically disable.
+18)How do you check memory usage in linux ?
+Answer:free -m
+
+19) basic linux command
+Answer:yes
+
+20) linux basic commands
+Answer:yes
+
+21)lsblk
+Answer:list of the block storage 
+
+22)mount a vol to instance via commands?
+Answer:mkfs,xfs_mount
+
+df -h=shows only root volumes
+lsblk=shows all volumes
+How to increase root volume commands :
+===============================
+volume attacheche with the console: 
+growpart /dev/xvda 1
+xfs_growfs -d /
+Temporary mount :
+==============
+temporary mount:
+mkfs.xfs /dev/xvdf
+mount /dev/xvdf /home/ec2-user
+
+Permanent mount:
+===============
+Cat /etc/fstab
+Vi /etc/fstab
+/dev/xvdf         /home/ec2-user   ext4   defaults,noatime 1 1
+
+
+23)What is the purpose of mount command?
+Answer: mount is filesystem external device ti the filesyatem of a system.
+
+24)How can I check memory by using which command?
+Answer: Free -m 
+
+25)I have a file, where it is we don't know how you can identify it?
+Answer: Find / -name <filename>
+
+26)just your are searching www.google.com, in the backend what its going on?
+Answer:
+
+27)How much of a rating is given in Linux?
+Answer:
+28)What is the swipe space command?
+Answer:
+29) Can you tell me the SMTP port number?
+Answer:
+
+30) Can you please tell me if the particular port number is running or not?
+Answer:
+
+31) Have you used the SED command?
+Answer:
+
+32) What does awk command?
+Answer:To particular coloum print the commnad
+
+33) Why are you using the grep command?
+Answer:to serching to the specific word
+
+34) What is the log's path in Linux?
+Answer: var/log
+
+35) Can you tell me $? ?
+Answer: $ variable represents the exit status of the previous command
+
+36) What is commendable if we want to copy all data from 1 bucket to another
+bucket?
+Answer: aws s3 sync s3:buckename-souce s3:bucketname-target
+
+37) enter df -h command and print specific data in that which command is used?
+Answer: awk {print $}
+
+38)Root volume is full how will you troubleshoot it?
+
+39) How to recover corrupted root vol data?
+Answer: fsck

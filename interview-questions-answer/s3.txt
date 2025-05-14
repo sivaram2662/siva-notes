@@ -1,0 +1,13 @@
+Amazon s3 storage classes:
+==========================
+1.S3 standard:
+   Amazon S3 standard provides high availability for objects.That makes it a good choice for a wide range of use cases ,such as websites,
+   contenty Distribution,and data analytics.amazon s3 standard has higher cost than other storage classes intended for infrequently accessed data and archival storage.
+
+2.S3 one-zone:
+   Comapard to s3 standard which store data in a minimum of three availability zones ,s3 One zone-1A stores data in a single availabilityzone .this makes it a good storage class.
+
+3.S3 glacier
+
+4.S3 intelligent
+

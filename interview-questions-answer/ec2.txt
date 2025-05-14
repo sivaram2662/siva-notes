@@ -1,0 +1,49 @@
+what is Cloud Computing
+-----------------------
+Cloud Computing is the on-demand delivery of IT resources over the internet with pay-as-you-go pricing.Instead of buying, owning and maintaining
+physical data centers and servers,you can access technology services,such as computing power,storage,and databases,on an as needed basis from a 
+cloud provider like AWS(Amazon web services).
+
+Cloud Computing types:
+---------------------
+     IAAS-(Infra as a service):To maintain the hardware and os computing resources like servers, storage and networking.
+     SAAS-(Software as a service):Ready-to-use software over the internet like Gmail, facebook, whats'up
+     PAAS-(platform as a service): Customise and you have to control it
+Amazon Elastic Compute cloud (Amazon Ec2):
+-----------------------------------------
+Amazon Ec2 provides secure ,resizable compute capacity in the cloud as Amazon Ec2 instance
+
+Amazon Ec2 instance types:
+-------------------------
+1.General purpose instance:
+2.Compute optimized instance
+3.Memory optimized instance
+4.Accelerated Computing instances
+5.Storage optimized instance
+
+Amazon Ec2 Pricing
+------------------
+1.On-Demend
+2.Reserved instance
+3.Ec2 instance saving plans
+4.Sport instance
+5.Dedicated Hosts
+
+EBS Volume Tyeps:
+-----------------
+general purpose SSD (gp2)
+general purpose SSD (gp3)
+Provisioned IOPS (io1)
+Provisioned IOPS (io2)
+Throughput optimized HDD
+Cold HDD
+Magnetic 
+
+Amazon Simple Notification service(Amazon SNS)
+----------------------------------------------
+Amazon SNS is a Publish/subscribe service.Using Amazon Sns topics a punlisher messages to subscribes can be web servers ,email addresses ,Aws Lambda functions or serveral other options.
+
+Amazon Simple Queue Service(Amazon SQS):
+---------------------------------------
+Amazon SQS, you can send ,store and receive messages or requiring other services to be available .In Amazon SQS, an application sends messages  into a queue.
+A user or service retrieves a messages from the queue ,processes it ,and the deletes it from the queue. 

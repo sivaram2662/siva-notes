@@ -1,0 +1,118 @@
+
+======================================================================================================================
+    PURPOSE                                            COMMANDS
+======================================================================================================================
+DOCKER IMAGES COMMANDS:
+=======================
+to list the images commands --------------------------docker images [or] docker images ls
+to remove single imags commands ----------------------docker rmi imageID
+to build image [command] -----------------------------docker build -t imagename:tagname
+to search the docker images --------------------------docker search <image_name>
+to run  the image        -----------------------------docker run <image_name>
+to remove at a time all images -----------------------docker rmi $(docker images -q) --force
+to download the images    ----------------------------docker pull <images name>
+to upload to the image is registroy-------------------docker push <image_name:tag_id>
+to delete the unused data images----------------------docker image prune
+to tag the image            --------------------------docker tag httpd:latest apache:1 <oldname:tag> <latestname:tag>
+To delete all images that are not attached to containers -docker system prune -a 
+to images history and see all contents----------------docker history imagename:tagname
+
+Docker version commands
+========================
+to will be show the version --------------------------docker version
+
+working on docker containers
+==============================
+to images history and see all contents----------------docker history imagename:tagname
+to run the container docker --------------------------docker run -d -p hostport:containeport imageid (or) imagename:tagname
+to list of the  running containers -------------------docker ps
+to list of the running and stopping containers -------docker ps -a
+to start docker contatine ----------------------------docker start containerid 
+
+to stop the docker contatine -------------------------docker stop containerid
+to remove the single containe ------------------------docker rm containerID
+to remove all conatiners at atime  -------------------docker rm $(docker ps -q) --force (or) docker kill $(docker ps -q)
+to login the container command------------------------docker exec -it containerID /bin/bash (or)  docker exec -it containerID bash (or) docker exec -it 
+containerID sh
+
+ WORKIN ON Docker volume commands
+=================================
+to create the docker volume command ------------------docker volume create <name>
+to list of the docker volume command------------------docker volume ls
+one docker volume inside the content to see command --docker volume inspect <volume name>
+to delete the single volume command-------------------docker volume rm <volume name>
+to at a time all volume remove command ---------------docker volume purne
+i want to mount to the docker volume in container --- docker run -it --name=<example> --mount source data,destination=/data os name
+
+Static component =-----Image[Template]
+Running component=-----container
+
+
+To write the Dockerfile steps:
+===============================
+FROM      -----------------to choice the base image of use.
+WORKDIR   -----------------to create the specific directory.
+RUN       -----------------To Run commands when building the docker images.
+ENV       -----------------env for the during run-time it is key-value pair
+ARG       -----------------variable  that are passed by the users builder at the build time . [or]  ARG for during the build time.
+ADD       -----------------download the url and extract the file automatically.
+COPY      -----------------copy to the files source to destination.
+CMD       -----------------runs commands when running the conatainer it is overwrite it .
+ENTRYPOINT-----------------CMD and ENTRYPOINT both are executable ones to start/run a service/program and append it.
+EXPOSE    -----------------container listens on the specified network ports at runtime
+
+
+
+Dockerfile for centos
+====================
+FROM centos:7
+RUN yum -y update
+RUN yum -y install httpd httpd-tools
+ADD index.html /var/www/html/index.html
+EXPOSE 80
+CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
+
+
+Dockerfile
+==========
+FROM ubuntu
+Run apt-get update -y /
+    && apt -get install apache2 -y
+COPY index.html /var/www/html
+CMD["apachectle" "D" "FOREGROUND"]
+
+Docker-Compose.ymnl
+===================
+version:
+service:
+  apache:
+    buiild:
+      context: .
+      Dockerfile: apache-Dockerfile
+    ports:
+      8080:80
+
+
+multistage docker file:
+-----------------------
+FROM maven AS build
+WORKDIR /app
+Copy ..
+
+FROM tomcat
+COPY --FROM=build app/target/file.war/user/local/target/webapps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

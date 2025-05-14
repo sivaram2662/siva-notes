@@ -1,13 +1,13 @@
 Docker
-=======
+========
 
 When we write any instructions in a file, It's nothing but Dockerfile 
 
 Static component  == Image (Template)
 Running component == Container
 
-DOCKERFILE INSTRUCTION LIST
-===========================
+DOCKER FILE INSTRUCTION LIST
+============================
 FROM
 LABEL
 USER
@@ -31,9 +31,9 @@ USER 	 	- Switches users (USER assigns user name and user group while running th
 
 WORKDIR  	- Creates and Specifies the directory that commands are run from and for RUN, CMD, ENTRYPOINT, COPY, and ADD.
 
-ENV      	- ENV is a key-value pair. It sets the <KEY> , an environment variable, to the value <VALUE>. These variables will be set during the                       image build also available after the container is launched.
+ENV      	- ENV is a key-value pair. It sets the <KEY> , an environment variable, to the value <VALUE>. These variables will be set during the image build also available after the container is launched.
 
-ARG      	- ARG defines the variables that are passed by the user to the builder at the build time. Remember: ARG instruction is also used to set                     environment variables with key and value, but this variables will set only during the image build not on the container
+ARG      	- ARG defines the variables that are passed by the user to the builder at the build time. Remember: ARG instruction is also used to set environment variables with key and value, but this variables will set only during the image build not on the container
 
 RUN  	 	- Runs commands when building the docker image (is executed when images are being built)
 
@@ -41,7 +41,7 @@ CMD 	 	- Runs commands when running the container (is executed when containers a
 
 ENTRYPOINT      - CMD and ENTRYPOINT both are executable one's to start/run a service/program and append it
 
-ADD             - Copies a file and directory from your host to Docker image, however can also fetch remote URLs, extract TAR/ZIP files, etc. It is used                   downloading remote resources, extracting TAR/ZIP files.
+ADD             - Copies a file and directory from your host to Docker image, however can also fetch remote URLs, extract TAR/ZIP files, etc. It is used downloading remote resources, extracting TAR/ZIP files.
 
 COPY            - Copies a file or directory from your host to Docker image, It is used to simply copying files or directories into the build context.
 
@@ -67,8 +67,8 @@ __pycache__/
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Remember:
-----------
+Remember(DockerBestPractices):
+------------------------------
 Always use Alpine
 Using Dockerignore
 Use Multi Stage Build

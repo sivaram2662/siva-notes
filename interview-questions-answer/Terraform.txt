@@ -1,0 +1,198 @@
+
+TERRAFORM
+=========
+1) Which files can you keep in main.tf?
+Ans: Technically, Main.tf can include any valid terraform HCL(HashiCrop Configuration Language) blocks such AWS
+     Provider-Blocks: To config Cloud and service providers
+     resource-Blocks: To define the infrastructure components
+     data-Blocks: To retrieve and reference external data sources
+     module-Blocks: To call reusable terraform modules 
+     Locals : To define local varibles within the configuration
+     terraform-blocks: For Backend configuration and required providers
+     varibles and output Blocks: Though usually kept in varibles.tf and output.tf, they can be in main.tf as well.
+
+2) How can you create 10 instances at a time by using terraform?
+Ans: You can use Count with most resources types to create multiple identical or parameterized resources.
+
+3) terraform files?
+Ans: Main.tf        --------It's define core  resources,modules and infrastructure
+     Varibles.tf    --------input varibles for customization and reuse
+     output.tf      --------Specifies output values after terraform apply
+     providers.tf   --------Declares providers and config clouds
+     terraform.tfvars-------providers values for input varibles(overrides varibles)
+     version.tf      -------specifies required terraform and provider versions
+
+4) terraform workspace?
+Ans: Terraform workspace is a way to manage multiple state files within the same configuration directory.It helps in managing different environments like(Dev,stage,prod) using the same codebase
+     terraform worksapce list
+     terraform workspace new dev
+     terraform workspace select dev
+     terraform workspace show 
+     terraform workspace delete dev
+
+
+5) if tf state file is deleted, how can you delete the resources?
+Ans: 1.Manually delete resources from the cloud providers (Or)
+     2. To recreate .tf files and use terraform import to rebuild state ,then run terraform destroy.
+
+6) What is terraform?
+Ans: Terraform is an open-sources infrastructure as code (Iac) tool developed by hashicrop that allows you to provision , manage and version infrastructure using declarative configuration files written in HCl(hashicrop Configuration language) 
+
+7) State file in terraform?
+Ans: The state files stores information about the infrastructure terraform manages.It tracks resources mapping between your .tf code and real-world cloud resources.
+
+8) I have a tfstate file? How to backup a tfstate file?
+Ans: Tfstate file to use remote backends for automaticc backups using for Aws s3 .
+
+9)Two users run the command terraform apply? Which user resource is created
+first?
+Ans:  Two users Run terraform apply at the same time, the one who gets the state lock first creates the resources first.
+
+10)I created resources using terraform? in my local remove statefile and again i give
+terraform plan, and apply? What happened?
+ANS: Terraform does'nt know about existing resources, it will treat all resources as new and try to recreate them.
+
+11) What is terraform import?
+Ans: Terraform import is command used to bring existing infrastructure(created outside terraform) into terraform state so it can be managed going forward.
+
+12)What does terraform refresh do?
+Ans: Terraform refresh updates the state file to match the infrastructure without changing any resource.
+
+13) terraform validate command purpose?
+Ans: The terraform validate command checks your terraform code for syntax errors and varifies that the configuration is structurally valid.
+
+15) Can we have the 5 s3 bucket within the single code?
+Ans: Yes you can create 5 s3 bucket in single code by using Count parameter.
+
+16) I want to make the 100 ec2 with the same configuration ? what tools u will use?
+and how?
+Ans: To create 100 ec2 with the same configuration , you should use terraform with the count meta-argument.
+
+17) terraform modules? Have you worked on that?
+Ans: Yes, terraform modules are reusable units of terraform code that help organize and scale your infrastructure
+    Local modules
+    remote modules
+
+18)Provisioners in terraform?
+Ans: Provisioners are used to excutes scripts or commands on a resources after it is created.
+     Types of Provisioners
+     ---------------------
+     1. remote-exec: To runs commands on the remote resources
+     2. Local-exec: To runs commands on your local machine
+     3. file: To Copies files form local to the remote machine.
+
+Scenario question----terraform functions? working scenario of terraform with cicd for dockerfile
+implementation, how we can have a build up image and its storage, meanwhile
+tell us about the tools used for this, which cicd u used and how ? if i have further
+changes do i need to write the whole again or some automation can be present?
+
+19) if i will get an error while doing terraform validate whether i will get or not
+terraform lock file?
+Ans: Yes , you will get a terraform.lock.hcl file even if terraform validate gives an error as long as you've already run terraform init.
+
+20) write a terraform code to create 10 ec2-instances and attached to the load balancer?
+Ans: Yes , you can create it and attached to the load balances
+
+21) How to create all resources? creating manuals using any Ias?
+Ans: To crate the all resources like (ec2,vpc,s3,Alb,) without manual work , use a infrastructure as a code (IAC).
+
+22) I will create 5 databases and I will create some resources on how to set up using terraform and how to divide different environments?
+Ans: terraform-databases              
+├── modules/              
+│   └── database/              
+│       ├── main.tf              
+│       ├── variables.tf              
+│       └── outputs.tf              
+├── dev/              
+│   └── main.tf              
+├── staging/              
+│   └── main.tf              
+├── prod/              
+│   └── main.tf              
+
+23) Which command is mostly used in terraform?
+Ans: Mostly used in terraform commands:
+     Terraform init
+     terrafrom validate
+     terraform fmt
+     terraform plan
+     terraform apply
+
+24) in terraform tell me the functions?
+Ans: terraform as many built-in functions to help manipulate strings,numbers,collection,logical.
+
+25) terraform particular resource destroy command?
+Ans: terraform destroy --target=resource_name.logical_name
+
+29) Do you work in terraform?
+Ans: Yes
+
+30) I already have an Aws account. We have to create resources, but why will you
+go terraform?
+Ans: Automates resources creation.
+     Tracks Changes with code (iac)
+     Easy to reuse & replicate environments
+     safer , faster and scalable than manual setup.
+
+32) terraform lifecycle?
+Ans: terraform resources lifecycles has special rules to control how resources are Created,updated and destroyed
+    Meta-argument
+    ------------
+    Create_before_destroy: Creates a new resources before destroyed the old one (useful for zero downtime)
+    prevent_destroy: prevents accidental deletion of critical resources.
+    ignore_changes: ignores changes to specified arguments during terraform apply
+
+33) terraform init?
+Ans: Terraform init command To initializing provide the pulgins and to required the dependency lock files.
+
+34) In terraform i want to spin up one ec2 instance there will be a 4 lines code which
+we will write,what parameters we need to pass can you tell me the lines?
+
+35)Which info is available in the tf state file?
+Ans: infrastructure resource detailes(id's,attribute), dependencies b/w resource, output form terraform config, modules paths and structure, provider configuration info.
+
+42) In the module what files are available?
+Ans: 
+    Main.tf        
+    Varibles.tf    
+    output.tf      
+    providers.tf   
+    version.tf      
+43) what are the different stages of terraform?(pending/ create /update /destroy)
+Ans: terraform init
+     terraform validate
+     terraform fmt
+     terraform plan
+     terraform apply
+     terraform destroy
+
+44) where you can store the tf state file?
+Ans: Tf state file is you can store the Aws s3.
+
+45) Terraform block.
+Ans: Terraform block is the top-level configuration that defines terraform settings like required version and providers.
+
+46) Null resource in terraform.
+Ans: Null resources in Terraform means a dummy resources that doesn't crate real infrastructure but is used.
+
+47) Terraform taint.
+Ans: 
+
+48) Have you worked terraforming ?
+Ans: yes
+
+49) What is the tfstate file?
+Ans:  terraform tfstate is a file that tracks the current state of your infrastructure so Terraform knows what to create, update, or destroy.
+
+56) Did you face any challenge while using terraform?
+Ans: Yes
+
+58) what are the terraform modules and advantages?
+Ans: terraform modules are reusable units of terraform code that help organize and scale your infrastructure
+   advantages:
+   -----------
+   reusable
+   clean code
+   team collaboration 
+   version control
+   

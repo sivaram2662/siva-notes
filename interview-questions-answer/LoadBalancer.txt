@@ -1,0 +1,38 @@
+LOAD BALANCERS
+==========================
+1) What is the difference between nlb and alb ? 
+Ans:        ALB(Application Load Balancer)                                NLB(Network Load Balancer)
+
+            L7 layer-Application Layer                  -------           l4 layer Transport Network layer
+            Its understand HTTP/HTTPS Protocals         -------           Its understand TCP/TLS/UDP Protocals
+            Routing web traffic based on content        -------           High-performance ,low-latency traffic
+            alb ip won't static keep changing           -------           static ip address assigned
+            It will have more request headers/response headers 
+
+2) Types of load balancers?
+Ans: Load balancers 4 types:
+    Alb(Application load balancer)
+    NLB(Network Load Balancer)
+    CLB(Classic Load Balancer)
+    GLB(Gateway Load Balancer)
+
+3) I have a running application but i want to attach one more vm to the same load
+balancer appln without down time?
+Ans: To attched to the Traget group.
+
+4) What is a sticky session in the Load balancer?
+Ans: Stick session is send all request in a session to same ec2 is called session tracking (or) sticky session.
+
+5) Why use Load Balancers?
+Ans: A Load Balancer is a service that automatically distributes incoming network or application traffic across multiple tragets to ensure reliability,availability,and performance of application.
+
+
+6) Difference between SG and NACL?
+
+Ans:            Security Group(SG)                                NACL(Networks Acess Control List)
+         Acts like a Firwall for instances                        Acts like a Firwall for subnets
+         Its Like stateful                                        ITs like stateless
+         only Allow rules                                         Allows and Deny rules
+         instance-level security                                  subnet-level security
+         
+

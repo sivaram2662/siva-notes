@@ -1,4 +1,3 @@
----
 Version Control Management
 ==========================
 
@@ -34,6 +33,7 @@ git client config = This information is used by git to record our commits
 git config --list                       == show the current configuration
 git config --global user.name           == add username of yours
 git config --global user.email          == add email of yours
+git config --global user.password       == add password of yours
 git config --global push.default        == add your push strategy like simple
 git config --global --edit              == edit your name and email...etc
 git config --global init.defaultBranch  == master

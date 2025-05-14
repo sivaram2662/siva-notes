@@ -1,4 +1,3 @@
----
 Configuration Management
 ========================
 Ansible is an open source, a Configuration Management Tool and Deployment tool, maintained by Redhat. This is process of configuring remote servers from one point of control.

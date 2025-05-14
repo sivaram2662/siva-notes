@@ -1,0 +1,390 @@
+Microsoft Azure
+===============
+AAD
+VMS
+VMSS
+Azure Load Balancer
+Application Gateway
+Traffic Manager
+Front Door and CDN(CloudFront)
+DNS Zones
+Vnets
+Storage Accounts
+App Service : Its Paas. will deploy web apps
+Functions   : Consumption serverless (Particular Time)/App service Plan(Continuosly running) like aws lambda
+Logic Apps  : Step by step process (Trigger/Scheduling)
+Service Bus : Topic(Single sender to multiple receivers) and Queue(Single sender to single receiver)
+
+
+authenticate azure to azure devops/outside like terraform/python 
+1. service principal (will create in azure active directory level)
+2. managed identity (system identity (when you delete resource it will delete) / user defined identity (when you delete resource it won't delete will go for manual)) (will create in resource level)
+
+Example:
+--------
+It will create manage identity generates object id in app service will copy to paste in azure key vault access policies then establish the connection.
+
+
+Azure Cost calculator
+----------------------
+It will give the cost estimation of azure resources in dollars.
+
+
+Storage Account
+----------------
+will store data like files, images, videos.
+two types of storage accounts like standard and premium
+Redudancy types like local redudant storage(LRS), geo-redudant storage(GRS), Read-Write GRS (RA-GRS) and Zone Redudant Storage (ZRS).
+
+LRS    ---> Primary and secondary within the one region only. when primary is down still able to acess storage account (Single Region)
+GRS    ---> Primary and Secondary within multi Regions. MS decides to create Storage account in nearest region of primary (Multi Regions)
+RA-GRS ---> Primary and Seconday but secondary will have read only access
+ZRS    ---> Data will be stored in multiple zones.
+
+storage account advanced concept is "Data lake". it stores historical data. when you enable premium then go a head.
+
+data protection  --> enable point-in-time restore(7days) for containers(folder)----> (recovery)
+
+enable soft-delete for blobs(files) ---> (Retain 7-365 days)
+
+enable versioning for blobs
+
+enable blob change feed --- tracking like who create, modified and delete
+
+type of storage account:
+-----------------------
+containerss(blob) storage  --> means unstructured data like files, logs, binary data, images, videos, vhd 
+file share means nfs --> create file share(folder) in azure and you can mount file share in your local machine --> not store vhd info
+table storage  ---> pure development
+queue storage  ---> pure development
+
+Access tiers
+cool    ---> access data from local to cloud storage (infrequently access data)
+hot     ---> frequently accessing the data
+archieve---> when you want to roll back your storage accounts (like recycle bin)
+
+Iam -- owner, contributor (use the resources but he doesnt give access to others), reader
+
+data migration ---> data migrating from on-premises(local machine) to azure cloud storage account via "az copy"
+
+data transformation ---> data migrating from one storage account to anothet storage account
+
+az copy
+storage explorer 
+
+authenticate to azure cloud storage account via az copy (or) storage explorer --> connection string, SAS, secrets
+By using az copy will use auth method called shared access signature (SAS) -- SAS Token
+By using storage explorer will use auth method called shared access signature (SAS) -- Blob SAS URL
+
+blob types ---> page blobs(vhd info), append blobs(log info) and block blobs
+
+life cycle management ---> to redcue the cost 
+static website        ---> single page application (create container $web inside we have to create page.html, error.html)
+alerts                ---> generic alerts and metric alerts (Average within 5mins how many times it fails)
+alerts configure      ---> azure resource manager role / email sms alert
+
+access keys   -->  create access key 
+object replication   ---> we have to replicate data from one storage account container($web) to another storage account container
+
+CORS ---> Cross regional replication
+storage account data is in one one domain can acess resources to another storage account data in another domain
+cors provides a secure way to allow one domain(the origin domain) to call APIs in another domain
+
+configuration --> change the existing conf of storage account like lrs, access tiers, encryption.
+
+networks ---> public networks, selected nwtworks
+
+Locks  ---> Read-only and delete (user will not able to delete)
+
+Recover deleted account  ---> last 14days like recycle bin
+
+new support request ---> raise a issue based on which service, which resource and problem type
+
+Events  ---> When any action performs immeditely another action will do.
+
+
+
+Recovery services vault -- backup service
+-----------------------
+to take the backup of vms, storage accounts..etc
+
+
+
+App Service(webapp) --> to deploy web apps
+-------------------
+app service plan (server)    ---> its backend of app service  ---> increase/decrease performance
+application insights         ---> moniotoring
+
+app service plan --> dev/test, pro and isolation
+
+Deployment slots --> Zero down time and roll back 
+
+Scale Up   -----> Change the configuration (app service plan)
+
+Scale Down -----> Increase/Decrease the Instances based on cpu and memory (manual scale and auto scale)
+
+Deployment center ---> via FTP creds, Source code like git,bitbucket,gitlab,azure repos
+
+Advanced tools         -----> (kudu) (or) winscp 
+App service Editor
+
+Console   ----> will see deployment files in console via cli
+
+Custom domains  ----> add custom domain and map to godaddy and update records
+
+App service logs ---> enable application logging
+
+Log stream ---->  Application Logs and web server logs
+
+Extentions --->  like anti virus malware, site replicator...etc
+
+clone APP ----> create new app service with existing config
+
+change app service plan 
+
+properties ----> outbound app addresses, resource id, location, subscription name, rg and some...
+
+backups  ---->  backup everyday store in storage account and retention period is 30days
+
+authentication ---> add identity provider like gmail sign in, facebook sign in give app registration details like client id, client secret (developers)
+
+configuration  --->  change application settings and general settings (you can acces from one service to another in configuartions via connection string)
+
+application insights ---> monitoring
+
+
+Azure Key Vault
+----------------
+store keys, certs and secrets like username, passwords for security
+
+pricing tier ---> standard and premium
+
+Enabled soft-delete means recovery (7 to 90 days)
+
+Access Policy  ----> Enable access to vms, arm templates and volumes ---> vault access policy and azure role based access control
+
+add acess policy  ---> keys, secrets and certs like get, list, update, create import and delete via service principal
+
+secrets/certs ---> generate/import secret add key value with expiry date  ---> it takes latest version
+
+App service  <--------> establish connection <------> key vault via identity (system assigned/user assigned) generates object id
+
+take object id and copies to access polcies of azure key vault via service principal
+
+
+
+Sql server
+----------
+store structured format data like rows and columns
+
+create sql server   ---> we dont create any database in sql server
+create sql database ---> it have data
+
+firewalls and virtual networks ---> allow and add ips to access the server ---> to block the internet request to connect your sql server
+
+auditing ---> basically used to track your activities in sql server or database which is done by the user
+
+types of database sku's
+basic
+standard
+premium
+
+query editor ---> you can query in database like create table, insert data...etc
+
+connect from local tool mssm (microsoft sql server managament studio) to azure sql server in remote.
+
+types of access management
+window based login  --->  server created in local machine itself and connect from local
+sql based dlogin    --->  server created in azure and connect from local (not recommended to give access in real time)
+AAD based Login     --->  server created in azure and connect from local (login with individual email)
+
+create login at server level  --> create login bharath with password = "Admin@123"
+
+create user to access db in existing login user at db level --> create login bharath with password = "Admin@123" create user bharath for login bharath
+
+set azure active directory admin email to sql server
+
+create user [aad_email] from external provider
+
+
+VM's
+----
+Availability Options 
+1. no infra redudancy required 
+2. availability zone (fault (in one rack will create vms with same config)and update domains (in one rack will create vms with diff config))
+3. availability set (will create across zones)
+4. vmss (distribute vms across zones and fault domains at scale) increase vms based on cpu and memory
+
+disks type
+os disk (os+softwares) ---> hdd(stores inbuilt disk--->increase or decrese size), ssd(stores in storage account-->page blobs(vhd)-->it can change automatic by size for data)
+data disk (data)
+
+size --> we can modify size. vm is in stopped state
+
+Reset password --> with new one
+
+Run command --> without loginto the server you should run commands via powershell commnds
+
+change tracking ---> logs log analytics workspace
+
+identity  ---> system and user assigned identity
+
+
+
+Vnet
+-----
+Its own representation of private cloud where we can create our private networks and restrict.
+
+we need two components for vnets
+--------------------------------
+1. address space (boundary of network means cidr range how many ips you want) --> ipv4(10.0.0.0) -- 32bit and ipv6(combination of alpha numeric) -- 128bit
+
+10.1.0.0/16  ==> 16 means prefix (or) subnet mask ==> 2 power 16 ==> 65536 ips 
+
+2. subnet (we can connect our virtual machines to vnets via subnet only)
+
+10.1.0.0/24  ==> 2 power 8 ==> 256 ips
+
+In Azure cloud Every subnet reserved 5 ips for pulic ips etc...
+
+public subnet (internet anyone can access)
+private subnet (intranet within the network only can access)
+
+Most of times will use A, B, C Classes
+--------------------------------------
+Class A --> 0 - 127
+Class B --> 128 - 191
+Class C --> 192 - 223
+Class D --> 224 - 239
+Class E --> 240 - 255
+
+Private Address Ranges
+-----------------------
+Class A: 10.0. 0.0 to 10.255. 255.255.
+Class B: 172.16. 0.0 to 172.31. 255.255.
+Class C: 192.168. 0.0 to 192.168. 255.255.
+
+
+Network security groups
+------------------------
+we can allow ports and ips to nsg who enters into our private network
+inbound rules (incoming request)
+outbound rules (outgoing request)
+
+
+Virtual Network Gateways (diff regions) 
+---------------------------------------
+It Enables the security.
+Scenario1: web application is in south india and database is in north europe then we can establish the connection by using virtual network gateway.
+
+Scenario2: web application is in east us and database is in our local machine then we can establish the connection by using virtual network gateway. (on-premises to azure)
+
+
+Vnet peerings
+-------------
+Establish the connection between two virtual networks
+two types of vpc peering
+1. v-net to v-net (same region, same subscription)
+2. global vnet peering (diff region, diff subscription) via virtual network gateway
+
+east us --> GatewaySubnet --> virtual network gateways1(VPN-RouteBased) <==> virtual network gateways2((VPN-RouteBased)) --> GatewaySubnet --> north europe
+
+(one virtual network gateway takes 25mins to create)
+
+point-to-site ---> individual users can able to connect 
+site-to-site  ---> multiple users can able to connect at a time
+
+ 
+Load balancing --- distribute the traffic to backend pools like vms
+---------------
+1. azure load balancer (can handle traffic in one region) works at tcp, udp protocols (L4-Transport Layer)
+
+configure this components...
+1. frontend ip address
+2. backend pool
+3. loadbalancing rules
+4. health probes
+
+2. traffic manager - dns based routing methods like performance, priority, geographic, weighted (can handle traffic in diff regions) works at http, https(L7-Application Layer)
+
+3. application gateway -- Regional Layer L7 -- SSL/TLS offloading
+ 
+4. front door -- Global layer L7 -- SSL/TLS offloading
+
+
+
+Azure monitor --- like cloudwatch in aws
+-----------------------------------------
+To monitor our applications and infrastructure.
+it will track whatever and whoever actions performing on azure resources in azure account
+
+Activity Log ---> like cloud trail in aws  ---> user performs any activity
+Alerts
+Metrics
+logs
+
+
+Go to any resource what you created ----> enable insights of left navigation
+
+insights
+alerts
+metrics
+
+
+
+Log Analytics Workspace -- Pay-as-you-go
+-----------------------
+It is the logical storage unit where your log data is collected and stored. (azure monitor logs you can easily store, retain and query)
+
+Write Qeries by using -- kusto query language 
+
+
+api management services  ------- like gateway
+------------------------
+It will take 25mins to create
+to expose apis via internet
+
+
+
+Azure Active Directory  -------- like Iam in aws
+----------------------
+users -- sign-ins -- MFA
+groups -- manager, owner, roles
+give access to users and groups like contributor, owner, reader
+
+roles and administrators manage AAD like APP admin, billing admin, global admin and reader...etc
+Iam-Roles manage resources
+
+App registrations (service principal) to give access to third party services/tools
+Example:
+when hitting the azure web app url it authenticates AAD and redirect to our url application via app registrations
+
+Azure AD Connect(you should be a gloal admin role): 
+-----------------
+AAD is in azure portal
+AD is in vm ----> want to sync vm users, groups to AAD
+
+
+
+Function App ----> similar to App service like lambda in aws 
+-------------
+host your applications in function app (or) app service.
+two types of hosting plans
+consumption plan -- serverless (schedule at particular time)
+app service plan (continuosly running on server 24/7)
+
+
+
+Service Bus -- like sns and sqs in aws
+-----------
+Topic(Single sender to multiple receivers)
+Queue(Single sender to single receiver)
+Enable partioning when you create topic and queue it will multiply 16 into how much gb.
+
+
+Logic Apps
+----------
+Step by step actions to be performed (Trigger/Scheduling)
+create logical app designer
+Scenario1: move azure blobs data from hot tier to cold tier to archieve tier when last modified data less than 7 days
+Scenario2: want to list azure key vault keys and upload to storage account under container and send the gmail

@@ -1,0 +1,52 @@
+IAM
+=====
+1) explain paas,saas, iaas ?
+Ans: IAAS-(Infra as a service):To maintain the hardware and os computing resources like servers, storage and networking.
+     SAAS-(Software as a service):Ready-to-use software over the internet like Gmail, facebook, whats'up
+     PAAS-(platform as a service): Customise and you have to control it
+
+2) Why do we use IAM?
+Ans: IAM stands for Identity access management
+     IAM is Global service
+     Iam is managed service
+     Iam users will be managed by admin
+     Authenication(level of login) and authorisation (level of access)
+     we can create the users,groups,roles and we can provide permissions/polices to them.
+     Alies name used by IAM users , but not root users
+
+3) how can you give s3 policy in the IAM role?
+Ans: Go to the iam Console---Create role / edit of role
+     Attached to POlicy----amazons3fullaccess
+     Assign to the Ec2.
+
+4) The iam role created, who used this role how can you know?
+Ans: Go to Aws Cloudtrail console to check logging for detailed tracking.
+
+5) What is the difference between iam role and trust factor?
+Ans: Iam role: A set of the permissions assigned to aws services or users to perform actions on Aws resources.
+     Trust factor(Trust Policy): It's Define to who which Aws account , service,or users can assum the Iam role.
+
+6) What is the use of amazon gratuity policy?
+Ans: Amazon's Gratuity policy provides a lump sum payment to long term employees as a benefit upon exit, following legal regulations.
+
+8) Have you worked on any policies in iam?
+Ans: Yes, I'm familiar with IAM polices in Aws. IAM polices define permissoins that allow or deny actions on aws resources. policies are written in json format and can be attached to IAM users, groups or roles.
+     Policy Types:
+     1. Managed policy: some polices are managed by aws
+     2. Custom policy: To create Custom polices you have to manage.
+     3. Inline policy: To custom policy attached directly to the specific Iam user,group and role.
+
+9) What is sts assumerole?
+Ans: STS Assumerole is an AWS Security Token Service(STS) allows an IAM user or Aws service to temporarily assume a different IAM role and gain its permissions.
+
+
+10) What is the difference between policies and roles?
+Ans: POlicies: Policies are used to Control what actions an entity can perform on aws resources
+     Roles: Roles simpily access management by allowing you to set of permissions to an entity with a single assignment, rather then individually granting each permissions
+
+11) What is the purpose of user groups?
+Ans: User gropus simpilify permissions management by allowing multiple IAM users to inherit the same set of policies.
+
+12) How do you give particular permissions to a service?
+Ans: you can give particular permissions to an aws services by attaching an IAM role with the required policies to that services.
+

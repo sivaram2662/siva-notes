@@ -1,0 +1,158 @@
+
+git life clye
+--------------
+
+non working are      working dir       staging area        local repo        remote repo 
+
+
+git init --------it is generate to empty git repo--------in local .git folder
+
+git status ----------it shows  status of the  git repo
+
+git add . ---------to all file added in staging area
+
+git rm --cached----remove the file form staging are to while keeping it in the working dir.
+
+git reset----moves the files from staging are to working dir.
+
+git commit -a -m "message'
+
+git log ---its will be show the commits 
+
+git show---its will be display for the all the objects 
+
+git branch -----its will shows the all branches
+
+git branch main--------------it created branch 
+
+git checkout -b main-------automatically to create branch and to shift the branch also
+
+git checkout branch name-------to shift to the one branch to another branch
+
+git stash----------switching branches to without committing to current branch
+
+git rebase/squash ----- make a number of commits to single commits 
+
+git merge -----to merge the one branch to another branch 
+
+git fetch----------fetch a changes form the remote repos
+
+GIT
+=====
+1) Tell me about GIT? the purpose of GIT?
+Ans: Git is a version control system and used tracking changes in computer files. It is generally useed for the source code management in software development. git used for tracking changes in the source code.
+
+1) What is git stash and git rebase ?
+Ans: Git stash: Switching branches to without committing to current branch
+     Git rebase: Make a numbers of commits to single commit
+
+2) Do you have git experience ?
+Ans: yes
+
+3) what is your branching strategy?
+Ans: Main 
+     develop
+Created one more branch is feature branch ---hotfix branches
+
+developer develop the code and to push to remote repos and dev team take the code and make changes in feature branches and push to remote repo.
+from feature to develop we merge with PR/MR request after approval we merge code from feature to develop.
+After same with develop to main we merge with PR/MR request after approval we merge code from develop to main
+
+4) What is git merge?
+Ans: Git Merge: merge is used to combine changes form one branch to another branch
+
+
+5) What is git cherry pick?
+Ans: Git cherry-pick is a command used to apply a specific commit from one branch onto another.
+
+10)What is git fetch and git pull?
+Ans: Git fetch: To get form any changes in in remote repos 
+     Git pull: Git Fetch+ Git merge
+               fetches updates and merge them into your current branch
+
+11) how can we revert the deleted branch in git?
+Ans: To run Git reflog to find the last commit hash and restore the branch using git checkout -d <branch> <commit-hash>
+
+12) about github?
+Ans: Github is developer platform that allows to developer to create, store,manage,and share their code.
+     It uses git to provide distributed version control and github itself provide access control, tracking,task management,Continuous integration.
+
+13) what does the git add . command?
+Ans: Git add . : To add the files in staging area 
+
+14) How do push the code local repo to the remote repo?
+Ans: Git push -u  origian main
+
+15) How to create a new branch in git?
+Ans: Git branch <new branch name>
+     Git checkout -b <branch-name>
+
+16) What is d/f b/w git and svn,why is git more popular?
+Ans:           Git                                         SVN
+             Distribution version control               centralized version control
+Branching----lighweight,fastand easy to merge           heavyweight ,slower,and can be complex
+Speed    ----faster                                     slower
+storage  ----stored locally in each clone               stored on a central servers
+datalose ----lower                                      higher
+
+17) What is git revert and reset?
+Ans: Git revert: command is used to new commit that undoes the changes introduced by a previous command.
+    Git reset: Move files for staging area to working dir
+
+18) How do you clone a git repo with a tag name?
+Ans: Git clone --branch <tag-name> --single-branch <repo-url>
+     git clone --branch <tag-name> --depth 1 <repo-url>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

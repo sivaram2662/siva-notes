@@ -1,0 +1,115 @@
+
+MASTER
+======
+1) APISERVER: 
+            The Api serevr will checks it like as iam user,it will be interact with workernodes.It checks weather the config file is correct or not, permission is correct or not .
+
+2) ETCD :
+           It is called as Column databases, it will store all the information. like how many worknodes,pods info and users info, all will be stored in etcd.
+
+3) SERVICE ACCOUNT:
+          To create a service account and create a role and bind the cluster by using cluster role binding along with service account.
+
+4) SCHEDULER:
+             I have a 10 workernodes it select all nodes and check the cpu/memory all information is identified by schedular based on select .
+             cpu/memory
+             node-label
+             node-group
+            node-affinity
+ The scheduler will takes the information from api server and schedular the worker nodes.
+
+5) Controller:
+          The controller will checks the yml files and based on objects.controller will be deployed by worker nodes .
+
+
+Worker nodes:
+=============
+1) KUBELET: 
+        It is running on workernodes,it pull the images form container Regestry. and also it will be collect the all information worknodes information and given to the api server.
+
+2) KUBE PROXY:
+           The kube-proxy will Forward the traffic from End users to the pods and it will be routes the Traffic From outside to inside of the cluster -pods (application)
+
+
+Cluster : Groups of ec2 instance is called cluster. (or) groups of nodes is called cluster.
+
+
+kubernetes objects 
+===================
+1)Deployment objects : 
+       
+   ----->pod objects: 
+          --- pod object is created to the single pod.we can't mention replicas
+          --- pod is unmanged state .if delete this pod is another pod is not comes at the pod object.
+
+   ----->deployment object 
+          --- In Deployment is mention the replicals if one pod is delete automatically another pod is comes that.
+          --- In deployment all pods its attached to the single volume or same pvc 
+
+   ----->replicaset object
+
+   ----->statefullset object
+        ---- In statefull set Each single pod will be attached single volume 
+                                    (or)
+        ---- STS each pod will have its own volume 
+        ---- Sts is it will be genarated the sts sequential orders follow that.Like is 0,1,2,3.
+
+   ----->Demonset object
+         DaemonSet manages the number of pod copies to run in a node.
+
+   ------>jobs
+        A job create one or more pods and will continue to retry execution of the pods untill a specified number of them sucessfully terminate.As pods successfully complete, the Job tracks the successful completions.
+
+2)Networking objects
+==================
+1) service objects: service is Entrypoint to expose to the outside the application.
+         ------>types of service objects: 
+                1)LoadBalancer : To access the application outside 
+                2)NodePort: with in the nodeport access the (http://hostport:nodeport)
+                3)Clusterip: with in cluster we can access and pick the random privete ip address.
+                4)none (or) headless service : in headless service is request will goes to all pods .
+2) Ingress objects : Ingress is path /host 
+
+
+3)storage objects
+=================
+1) Persistent Volumes :
+
+2) Persistent Volumes Claims :
+
+4)properties obejects
+===================
+1) configmap : CM is a plan test format it is easily everyone understand that. 
+
+2) secrets : secrets is is encoded format it is not decoded it will be stored to the passwd and username.
+
+5)health check 
+============
+1) livenessprobe : keep restart contineousliy to pod is healthly. it check the health check.
+
+2) readinessprobe: it will check heath it it will traffic stopped 
+
+6)resources 
+=========
+1) request : Whenever pod comes up it will be allocate resources from requests
+
+2) limits : Saturation (max it can utilize) --pod will go hung (cpu ) / killed (memory)
+
+what is mean by init container ?
+pod is created utilization time is called init container
+
+what is sidecar?
+Inside the pods more than containers is called sidecar.
+
+what is namespace ?
+ It is used to group the objects as vistually to identify the objects with the help of namespaces.
+
+
+what is mean by Hot Deployment ?
+         with out stopping tomcat & apache server and deploy the application is called hot deployment.
+
+what is mean by cold Deployment ?
+         stop deploy a application and start the bserver .most of the company are following the cold Deployment.
+
+what is mean by Blue-green deployment?
+    Blue is live and green is up comming version .Base on Feedback the Green will more to live.the after it called Blue any change is comming in front it morre it green.

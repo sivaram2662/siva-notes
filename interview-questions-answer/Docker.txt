@@ -1,0 +1,160 @@
+
+                            DOCKER
+===================================================================
+1) What does docker explain in detail ?
+ Answer: Docker another name is called containerD. 
+       ----> On top of the ec2 instace install the Docker software we have to run multipule containers,multiple application like as (apache,nginx,tomacat)
+
+2) I have a Dockerfile in that dockerfile consumes heavy storage? how to decrease
+the storage?
+Answer: In Dockerfile Ruduce the number of layers. and to write the multistage Dockerfile.
+
+3) Difference between copy and add?
+Answer: copy to files source to destination and add is get the url and extract the url is automatically 
+
+4) docker list commands what you have used in your environment?
+ Answer: Docker images ---to list the images
+         Docker ps ------- to list the running containers
+
+5) How to create a docker container?
+Answer: docker run -d -p 8000:80 <image id> or <images name>
+
+
+6) Any way to identify the status of docker containers?
+Answer: docker ps (or) docker container ls 
+
+7) What is DOcker?
+Answer: Docker is one of the building the images tool . To install the docker software to run the at a time multipule application. 
+
+8) How to login to a container.?
+Answer: Docker exec -it <container id> sh 
+
+9) What are the DOcker networks?
+Answer: bridge ,none,host,overlay
+
+10) Are you creating any Docker network?
+Answer: yes by using command is Docker network <name>
+
+11) Why are you creating Docker networks? 
+Answer: Docker network create <name>
+
+12) How can we mount volume on containers?
+Answer:docker volume create ---------->command
+
+13) How can we see an image in depth?
+Answer: Docker images -a
+
+14) .Difference between CMD and Entrypoint?
+Answer: CMD and ENTRYPOINY is both start the service and cmd is a overwrite it and to the entrypoint is append that.
+
+15) explain any kind of dockerfile?
+Answer:
+Dockerfile : From ,Run ,Workdir,Arg,Env,Copy,Add,Expose,Cmd.Entrypoint
+
+
+16) What is the purpose of docker hub?
+Answer: Docker hub is on of the storing to the images 
+
+17) Difference between CMD and EntryPoint?
+
+18) how to identify the port mapping of existing container in docker?
+AnswerL: Docker ps -a 
+
+19) Difference between ARG and ENV ?
+Answer : Arg is during to the build-time 
+         Env is during to the run-time is used 
+
+20) Difference between ADD and COPY Command in docker file?
+Answer: Copy is file is souce to destinaton
+        ADD is get url and extract the url is automatically 
+
+21) How to decrease Docker Image file size?
+Answer: To write multistage dockerfile and to reduce the number of layers in dockerfile .
+
+
+22)What is docker and what is the use of docker?
+Answer:
+Docker another name is called containerD. 
+       ----> On top of the ec2 instace install the Docker software we have to run multipule containers,multiple application like as (apache,nginx,tomacat)
+       ----> Docker is build tool  to the images 
+
+23) How will you scan docker images?
+Answer: docker images to send the ecr to check bot enble to that in erc automatically scan to the images .
+
+24) Are you following any standards and guidelines to create dockerfile?
+Answer: Yes we are follwing guidelines in dockerfile.
+
+25) How many dockerfiles have you written?
+Answer: yes 
+
+26) Can you tell me why we use a multistage dockerfile?
+Answer: one docker file we can run to the multipule images that is called multistage Docker file. we can use helper images and target images .
+
+FROM maven AS build |
+WORKDIR /app        |   helper image
+COPY ..             |
+
+FROM tomcat                                                       |
+COPY --FROM=build /app/target/file.war/user/local/tomcat/webapps  |     Target image
+
+27) Can you tell in a single docker file if we can run multiple CMD commands?
+Answer : yes
+
+28) Can you tell me what the entry point is?
+Answer: Entry point is to start the service and to append to that.
+
+29) How to list docker networks in docker?
+Answer: Docker network list
+
+30) How to stop running containers in docker?
+Answer : Docker stop <conatainet id>
+
+31) Have you worked with docker-compose? at least you know why we use
+docker-compose?
+Answer: yes i have worked on Docker-compose, Docke-compose at a time to run the multipule docker file ,to reduce the time and to build to the images.
+
+32) Do you assure or remove root permissions in dockerfile?
+Answer: USER 
+
+
+33) diff between docker and docker-compose,docker hub?
+
+
+34) In docker, what is distroless image in docker?
+Answer: In Distroless images is unused images only your applications and it runtime dependencies.
+
+
+
+35) how to create a user in docker?
+Answer:In docker file to add the user : USERADD 
+
+
+36)command to remove container?
+Answer: Docker stop <container id>
+       Docker rm ${docker ps -q} --f           
+
+37)How will you list the continers. ?
+Answer: Docker ps -a (or) docker container ls
+
+
+
+38)difference between docker image and docker continer?
+Answer: Docker images is only build the images on used 
+        Docker container is to run the application and to expose the applcation on conatiners portmaping.
+
+39)have you work with docker?
+Answer: Yes
+
+40) How to create a docker container?
+Answer: Yes
+
+41) How to login to a container with docker?
+Answer: Yes command docker exec -it <conatainer id> sh 
+
+42)have you work with docker?
+Answer: yes
+
+43)  which docker  command is used to copy image to local?
+Answer : Docker cp ./some_files  container:/work
+
+44) .Difference between docker file and docker compose?

@@ -1,0 +1,110 @@
+
+JENKINS
+============
+1) What are the stages in Jenkins ?
+    1.checkout    
+    2.Build
+    3.Deploy
+2) Jenkins master slave configuration
+        jenkins another name called controller. In controller create the slave(agent)
+3) What is cicd flow ?
+
+4) Please write a Jenkins file?
+Ans: Pipeline{
+       agent any
+       stages{
+        stage("github_url)
+          step{
+            url
+          }
+       }
+       stage("CI"){
+          steps{
+            "CI -COMMANDS"
+
+          }
+       
+       }
+       Stage("CD"){
+          step{
+            "CD-COMMANDS"
+          }
+       }
+}
+5) Difference Between scripted pipeline & Declarative pipeline?
+
+6) difference declarative and scripted pipeline?
+
+7) Difference b/w master and slave in Jenkins
+
+8) I have a jenkins machine. How to integrate Jenkins to kubernetes?
+
+9) write the jenkins pipeline?
+
+10)How do u configure master slave configuration?
+
+11)Plug-ins used in Jenkins?
+
+12)How to take backup of Jenkins machine?
+
+13)Explain the CICD process?
+
+14)how do you call the variables in pipeline?
+
+15)how do you pass the secret in jenkins pipeline?
+
+16) PING threat in jenkins?
+17) How to transfer the console log for a particular jenkins build?
+18) CI achieved using jenkins?
+19) What is the CICD pipeline?
+20) Diff types of Pipeline?
+21) How to set up Jenkins' job? Steps to have a Jenkins job?
+22) Most useful plugin jenkins?
+23) How can you integrate jenkins with kubernetes?
+24) Can we monitor jenkins using common monitoring tools
+25) Tell me the cicd flow?
+26) How can you trigger a job in jenkins?
+27) What is a webhook in jenkins?
+28) Which server is used for deployment applications in jenkins?
+29) If we want to deploy app ec2-to jenkins how do you configure it?
+30) Do you have a cicd deployment code deploy and code pipeline?
+31) What kind of automation do you have to do in jenkins?
+32) define continuous integration and continuous deployment, continuous delivery
+33) What are the cicd strategies?
+34) Do you work in a prod Environment?
+35) In your Organization how to deploy applications? any automation (or) manual?
+36) explain your environment cicd flow
+37)why we are using jenkins and explain jenkins pipeline
+38)If we have two environments, suppose 1.test 2.prod how you are maintaining
+these two environments in the same aws account or another aws account and
+why ?
+39) What is the difference between continuous delivery and deployment?
+40) cicd ?
+41) What is the Jenkins pipeline?
+42) Tell me how you create a Jenkins job and explain step by step?
+43)How do you check code quality?
+44) Different between scripted pipeline and declarative pipeline?
+45) explain your environment cicd flow
+46) What type of pipeline is used in your environment?
+47) write jenkins file
+48) Explain the jenkins architecture?
+49) write a scripted pipeline
+50) how to trigger jenkins once u have changed the port from 8080 to 8081?
+51) Why do we use master-slave architecture?
+52) Most useful plugin jenkins?
+53) authentication techniques of jenkins
+54) Did you write the Jenkins pipeline?
+55) What is the purpose of /etc/passwd?
+56) where you can store your password file?
+57) what happen if we delete that password file
+58) Plugins used in Jenkins.
+59) How are you using sonarqube?
+60)Can you explain the cicd pipeline?
+61)What kind of pipeline are you following?
+62) What is the difference between a declarative pipeline and a scripted pipeline?
+63) What is a multibranch pipeline?
+64) How do you manage the pipeline?
+65) Write a declarative pipeline with 5 stages?
+66)What is elastic trans coders??
+67)How do you manage secrets in jenkins ??
+68)explain about jenkins and pipline's?
